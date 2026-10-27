@@ -11,5 +11,14 @@ CONFIG_ZMK_USB=y
 CONFIG_USB_SELF_POWERED=n
 CONFIG_ZMK_KSCAN_MATRIX_POLLING=y
 
-# Needed to reduce this to size that will fit on F072
-CONFIG_HEAP_MEM_POOL_SIZE=1024
+# Nothing allocates from the kernel or libc heaps, and RAM is scarce on F072.
+# The libc arena defaults to all RAM left after _end: when that is smaller
+# than the heap header, its init writes past the end of RAM and hard-faults.
+CONFIG_HEAP_MEM_POOL_SIZE=0
+CONFIG_COMMON_LIBC_MALLOC_ARENA_SIZE=0
+
+# Persist keymap changes (e.g. from ZMK Studio) to the storage partition
+CONFIG_FLASH=y
+CONFIG_FLASH_MAP=y
+CONFIG_NVS=y
+CONFIG_SETTINGS=y
