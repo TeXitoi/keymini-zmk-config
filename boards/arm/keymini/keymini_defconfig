@@ -22,3 +22,6 @@ CONFIG_FLASH=y
 CONFIG_FLASH_MAP=y
 CONFIG_NVS=y
 CONFIG_SETTINGS=y
+
+# Jump to the ST bootloader on &bootloader, see keymini.c
+CONFIG_PLATFORM_SPECIFIC_INIT=y

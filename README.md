@@ -1,14 +1,11 @@
 # ZMK config for keymini
 
-ZMK firmware with ZMK Studio.
-
-The firmware is fully functionnal. The only lacking feature is "reboot
-to bootloader", that is not supported by Zephyr currently. So you need
-to go to bootloader mode by hand by shorting the two pads under the
-keyboard while plugging USB.
+The firmware is fully functionnal, with ZMK Studio. Because RAM is
+limited, some behaviors are tunned a bit down, and only 5 layers are
+available.
 
 See the [keymini github](https://github.com/TeXitoi/keymini/) for more
-information about keymini.
+information about the keymini keyboard itself.
 
 Erase ZMK Studio storage (if needed, at least the first time) with:
 
