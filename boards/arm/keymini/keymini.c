@@ -2,6 +2,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <zephyr/linker/sections.h>
 #include <zephyr/linker/section_tags.h>
 #include <soc.h>
 
