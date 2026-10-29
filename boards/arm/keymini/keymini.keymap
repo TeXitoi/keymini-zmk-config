@@ -14,12 +14,21 @@
 	behaviors {
 		hm: homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
-			label = "homerow mods";
+			label = "Homerow Mods";
 			#binding-cells = <2>;
 			flavor = "tap-preferred";
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&kp>;
 		};
+		skq: sticky_key_quick_release {
+			compatible = "zmk,behavior-sticky-key";
+			label = "Sticky Key Quick Release";
+			#binding-cells = <1>;
+			bindings = <&kp>;
+			release-after-ms = <1000>;
+			quick-release;
+			ignore-modifiers;
+	       };
 	};
 
 	keymap {
@@ -31,7 +40,7 @@
 	&kp Q         &kp W         &hm LGUI E    &kp R         &kp T             &kp Y         &kp U         &hm RGUI I    &kp O         &kp P
 	&kp A         &hm LALT S    &hm LCTRL D   &hm LSHFT F   &kp G             &kp H         &hm RSHFT J   &hm RCTRL K   &hm LALT L    &kp SEMI
 	&kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH
-	                            &kp K_APP     &kp SPACE     &mo NAV           &mo NUM       &kp RSHFT     &kp RALT
+	                            &kp K_APP     &kp SPACE     &mo NAV           &mo NUM       &skq RSHFT    &kp RALT
 			>;
 		};
 
@@ -61,7 +70,7 @@
 	&kp F1        &kp F2        &hm LGUI F3   &kp F4        &kp F5            &kp F6        &kp F7        &hm LGUI F8   &kp F9        &kp F10
 	&none         &kp LALT      &kp LCTRL     &kp LSHFT     &kp LBKT          &kp RBKT      &kp RSHFT     &kp RCTRL     &kp LALT      &none
 	&kp F11       &kp F12       &kp NON_US_BSLH &kp GRAVE   &none             &none         &kp SQT       &kp BSLH      &kp MINUS     &kp EQUAL
-	                            &bootloader   &trans        &none             &none         &trans        &studio_unlock
+	                            &bootloader   &sys_reset    &none             &none         &trans        &studio_unlock
 			>;
 		};
 
