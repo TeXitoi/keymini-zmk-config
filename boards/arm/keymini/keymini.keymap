@@ -30,6 +30,13 @@
 			ignore-modifiers;
 	       };
 	};
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		tri_layer {
+			if-layers = <1 2>;
+			then-layer = <3>;
+		};
+	};
 
 	keymap {
 		compatible = "zmk,keymap";
@@ -50,7 +57,7 @@
 	&kp PAUSE_BREAK &kp CAPS    &kp LGUI      &kp PSCRN     &kp SLCK          &none         &kp BSPC      &kp DEL       &kp INS       &none
 	&none           &kp LALT    &hm LCTRL ESC &hm LSHFT TAB &kp LS(TAB)       &kp LC(BSPC)  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT
 	&kp K_UNDO      &kp LS(DEL) &kp LC(INS)   &kp LS(INS)   &none             &kp RET       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END
-	                            &trans        &trans        &none             &mo FUN       &trans        &trans
+	                            &trans        &trans        &trans            &trans        &trans        &trans
 			>;
 		};
 
@@ -60,7 +67,7 @@
 	&kp EXCL      &kp AT        &hm LGUI LS(N3) &kp DLLR    &kp PRCNT         &kp CARET     &kp AMPS      &hm RGUI LS(N8) &kp LPAR    &kp RPAR
 	&kp N1        &hm LALT N2   &hm LCTRL N3  &hm LSHFT N4  &kp N5            &kp N6        &hm RSHFT N7  &hm RCTRL N8  &hm LALT N9   &kp N0
 	&none         &none         &kp LS(N)     &kp DOT       &kp RA(G)         &kp N         &kp KP_PLUS   &kp KP_MINUS  &kp KP_SLASH  &kp KP_ASTERISK
-	                            &trans        &trans        &mo FUN           &none         &trans        &trans
+	                            &trans        &trans        &trans            &trans        &trans        &trans
 			>;
 		};
 
